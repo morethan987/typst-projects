@@ -69,7 +69,7 @@
 ]
 
 #let key_word = [
-  #lorem(5)
+  关键词1，关键词2，关键词3
 ]
 
 #make-abstruct(config, abstruct, key_word)
