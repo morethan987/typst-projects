@@ -1,7 +1,7 @@
-#import "font.typ": use-size, font-family
+#import "font.typ": use-size
 
 
-#let apply-ref-style(body) = {
+#let apply-appendix-style(body) = {
   set par(first-line-indent: 0em)
   set heading(numbering: none)
   show heading: head => {
@@ -13,5 +13,7 @@
 
     strong[#head.body]
   }
+  set figure(numbering: "一", supplement: [图片])
+  set figure.caption(separator: [：])
   body
 }

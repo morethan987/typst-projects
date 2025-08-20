@@ -1,6 +1,6 @@
 #import "/style/font.typ": use-size, font-family
 
-#let make-abstruct(config, abstract, key_word) = {
+#let make-abstract(config, abstract, key_word) = {
   // 大标题
   align(center + top, text(use-size("三号"))[
     #strong(config.title)

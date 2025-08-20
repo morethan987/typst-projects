@@ -19,6 +19,15 @@
   reference_title: "参考文献",
 )
 
+
+#import "style/heading.typ": set-heading, custom-numbering
+#import "style/font.typ": use-size, font-family
+#import "style/cover.typ": inser-background, fill-cover-content
+#import "style/abstract.typ": make-abstract
+#import "style/ref.typ": apply-ref-style
+#import "style/appendix.typ": apply-appendix-style
+
+// 文档内置属性设置，和内容无关
 #set document(
   title: [毛概实践报告],
   author: "morethan",
@@ -27,19 +36,11 @@
   keywords: ("毛概", "实践报告", "Typst")
 )
 
-#import "style/heading.typ": set-heading, custom-numbering
-#import "style/font.typ": use-size, font-family
-#import "style/cover.typ": inser-background, fill-cover-content
-#import "style/abstract.typ": make-abstruct
-
 //产生封面内容
 #fill-cover-content(config)
 
 // 字体配置
 #set text(font: font-family.at("SongTi"), use-size("五号"))
-
-// 标题计数器配置
-#set heading(numbering: custom-numbering)
 
 //目录设置
 #pagebreak()
@@ -49,6 +50,7 @@
 
 
 //标题样式配置
+#set heading(numbering: custom-numbering)
 #show heading: it => set-heading(it, config)
 
 // 页面配置
@@ -64,7 +66,7 @@
 
 ////////////////////// 摘要 //////////////////////
 
-#let abstruct = [
+#let abstract = [
   #lorem(450)
 ]
 
@@ -72,7 +74,7 @@
   关键词1，关键词2，关键词3
 ]
 
-#make-abstruct(config, abstruct, key_word)
+#make-abstract(config, abstract, key_word)
 
 ////////////////////// 正文 //////////////////////
 
@@ -214,33 +216,22 @@
 这里放一个文献引用@sina20241026，只有引用的的文献才会被列出
 
 ////////////////////// 引用文献 //////////////////////
+#pagebreak()
+#apply-ref-style[
 
 #bibliography(
   "ref.bib",
   title: config.reference_title,
   style: "gb-7714-2015-numeric"
 )
+
+]
 #pagebreak()
 
 /////////////////////// 附录 ///////////////////////
-
-#set par(first-line-indent: 0em)
-
-#set heading(numbering: none)
-#show heading: head => {
-  set align(center) if head.level == 1
-  set text(size: use-size("四号")) if head.level == 1
-  set text(size: use-size("小四")) if head.level == 2
-  set text(size: use-size("小四")) if head.level == 3
-  set text(size: use-size("五号")) if head.level == 4
-
-  strong[#head.body]
-}
+#apply-appendix-style[
 
 = 附录
-
-// 目录中不展示子级内容
-#set heading(outlined: false)
 
 == 问卷调查
 
@@ -250,18 +241,14 @@
 
 == 活动图片
 
-#set figure(numbering: "一")
-#set figure.caption(separator: [：])
-
 #figure(
   image("asset/截图 2025-08-15 15-44-39.png", width: 85%),
-  caption: [图片示例],
-  supplement: [图片]
-  
+  caption: [图片示例]  
 )
 
 #figure(
   image("asset/截图 2025-08-15 15-44-39.png", width: 85%),
-  caption: [图片示例],
-  supplement: [图片]
+  caption: [图片示例]
 )
+
+]
