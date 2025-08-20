@@ -1,16 +1,19 @@
+#import "font.typ": font-family
+
+
 #let fill-cover-content(config) = {
   // 学校大字名称
   align(center + top, image("/asset/school-name.png", width: 33%))
   // 文件名
-  align(center, text(font: "Source Han Serif SC", size: 26pt)[概论课程社会实践报告])
+  align(center, text(font: font-family.SongTi, size: 26pt)[概论课程社会实践报告])
   // 校徽
   align(center + top, image("/asset/school-badge.png", width: 33%))
   //学期
-  align(center, text(font: "Source Han Sans SC", size: 16pt)[#config.session])
+  align(center, text(font: font-family.HeiTi, size: 16pt)[#config.session])
   // 空行
   [\ ]
   
-  par(leading: 18pt, align(left, text(font: "Source Han Sans SC", size: 15pt)[
+  par(leading: 18pt, align(left, text(font: font-family.HeiTi, size: 15pt)[
     #h(13%)教学班号：#config.teaching_class_number\
     #h(13%)论文题目：#config.title\
     #h(13%)学生姓名：#config.cover_name\

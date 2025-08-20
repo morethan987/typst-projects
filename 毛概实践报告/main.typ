@@ -40,7 +40,7 @@
 #fill-cover-content(config)
 
 // 字体配置
-#set text(font: font-family.at("SongTi"), use-size("五号"))
+#set text(font: font-family.at("SongTi"), use-size("五号"), lang: "zh")
 
 //目录设置
 #pagebreak()
