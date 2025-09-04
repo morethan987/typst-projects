@@ -1,5 +1,5 @@
 // 标题样式配置
-#let set-heading(head, config) = {
+#let set-heading(head) = {
   // 接收标题元素，返回content元素
   set par(first-line-indent: 0em)
   set text(size: 14pt) if head.level == 1
