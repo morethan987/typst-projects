@@ -1,22 +1,22 @@
 #let font-family = (
   SongTi: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
-    "Source Han Serif SC",
+    (name: "Noto Serif", covers: "latin-in-cjk"),
+    "Source Han Serif",
   ),
   HeiTi: (
     (name: "Noto Sans", covers: "latin-in-cjk"),
-    "Source Han Sans SC",
+    "Source Han Sans",
   ),
   KaiTi: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
+    (name: "Noto Serif", covers: "latin-in-cjk"),
     "AR PL UKai",
   ),
   FangSong: (
-    (name: "Times New Roman", covers: "latin-in-cjk"),
+    (name: "Noto Serif", covers: "latin-in-cjk"),
     "FZFangSong-Z02S",
   ),
   Mono: (
-    (name: "DejaVu Sans Mono", covers: "latin-in-cjk"),
+    (name: "Noto Sans Mono", covers: "latin-in-cjk"),
     "Maple Mono NF",
   ),
   Math: (
