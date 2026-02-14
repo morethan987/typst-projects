@@ -9,7 +9,7 @@
     columns: 2,
     gutter: 10pt,
     // 假设你有 helper 函数，或者直接写
-    image("/asset/问卷年龄分布.png"), image("/asset/问卷地域分布.png"),
+    image("/assets/问卷年龄分布.png"), image("/assets/问卷地域分布.png"),
   ),
   caption: [受访者基础信息分布图],
 )

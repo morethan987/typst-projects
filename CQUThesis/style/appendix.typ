@@ -1,4 +1,4 @@
-#import "font.typ": use-size
+#import "../utils/font.typ": use-size
 
 
 #let apply-appendix-style(body) = {

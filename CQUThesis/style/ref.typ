@@ -1,4 +1,4 @@
-#import "font.typ": use-size, font-family
+#import "../utils/font.typ": use-size
 
 
 #let apply-ref-style(body) = {

@@ -1,41 +1,23 @@
-// template.typ
-
-// 导入原来的样式模块
+#import "config.typ": font-family
 #import "style/heading.typ": set-heading, custom-numbering
-#import "style/font.typ": use-size, font-family
-#import "style/cover.typ": inser-background, fill-cover-content
+#import "utils/font.typ": use-size
+#import "style/cover.typ": fill-cover-content
 #import "style/abstract.typ": make-abstract
-#import "style/task.typ": make-task-page
 #import "style/ref.typ": apply-ref-style
 #import "style/appendix.typ": apply-appendix-style
 
 // 定义模板主函数，这里包括了整个文档的结构和样式设置
-#let practice_report(
-  config: (:),           // 所有的元数据
-  abstract: [],          // 摘要内容
-  keywords: (),          // 关键词列表
-  task_info: none,       // 分工表内容
-  bib_file: none,        // 参考文献文件路径 (.bib)
-  appendix: none,        // 附录内容
-  body                   // 正文
-) = {
+#let cqu_thesis(config: (:), body) = {
   // --- 文档元数据设置 ---
   set document(
-    title: config.title,
-    author: config.at("author", default: "morethan"), // 做了个防空保护
-    date: datetime.today(),
-  )
-
-  // --- 全局字体与页面配置 ---
-  set page(paper: "a4", numbering: "1")
-  set text(font: font-family.at("SongTi"), size: use-size("五号"), lang: "zh")
-  set par(
-    first-line-indent: (amount: 2em, all: true),
-    justify: true
+    title: config.meta_data.at("title", default: "default title"),
+    author: config.meta_data.at("author", default: "default author"),
+    date: config.meta_data.at("date", default: "default date"),
+    description: config.meta_data.at("description", default: "default description")
   )
 
   // --- 封面 ---
-  fill-cover-content(config)
+  // fill-cover-content(config)
 
   // --- 目录 ---
   pagebreak()
@@ -47,15 +29,9 @@
     outline(depth: 4, title: outline_title)
   }
 
-  // --- 任务分工表 ---
-  if task_info != none {
-    pagebreak()
-    make-task-page(task_info)
-  }
-
   // --- 摘要 ---
-  // 这里假设 make-abstract 内部处理了 pagebreak，如果没有，可以在这里加
-  make-abstract(config, abstract, keywords)
+  import "contents/abstract.typ": abstract, keywords
+  make-abstract(abstract, keywords)
 
   // --- 正文样式配置 ---
   // 重置页码或计数器（如果需要）
@@ -75,27 +51,13 @@
   body
 
   // --- 参考文献 ---
-  if bib_file != none {
-    pagebreak()
-    apply-ref-style[
-      #bibliography(
-        bib_file,
-        title: config.at("reference_title", default: "参考文献"),
-        style: "gb-7714-2015-numeric"
-      )
-    ]
-  }
-
-  // --- 附录 ---
-  if appendix != none {
-    pagebreak()
-    apply-appendix-style[
-      // 附录特有设置
-      #set heading(outlined: false)
-      #counter(heading).update(0) // 附录重新编号
-      #heading(level: 1)[附录]
-
-      #appendix
-    ]
-  }
+  pagebreak()
+  apply-ref-style[
+    #bibliography(
+      config.reference_config.bib_file,
+      title: config.reference_config.at("reference_title", default: "参考文献"),
+      full: config.reference_config.at("full", default: false),
+      style: config.reference_config.at("reference_style", default: "gb-7714-2015-numeric")
+    )
+  ]
 }

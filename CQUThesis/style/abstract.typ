@@ -1,16 +1,10 @@
-#import "/style/font.typ": use-size, font-family
+#import "/utils/font.typ": use-size
+#import "/config.typ": font-family
 
-#let make-abstract(config, abstract, key_word) = {
+#let make-abstract(abstract, key_word) = {
   // 大标题
   align(center + top, text(use-size("三号"))[
-    #strong(config.title)
-  ])
-
-  // 小作者
-  align(center + top, text(use-size("小四"))[
-    #config.all_authors.keys().map(author => {
-      author + config.all_authors.at(author)
-    }).join("  ")
+    *摘要*
   ])
 
   set par(first-line-indent: 0em)
