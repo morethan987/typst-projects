@@ -54,11 +54,7 @@
 
   line(length: 100%)
 
-  text(green)[_Now you can remove the *`fonts-display`* page from the document._]
-
-  align(right)[*Typst v#sys.version* & *TnTT v#toml("../../typst.toml").package.version*]
-
-  pagebreak(to: "odd") // Always page break to odd page
+  text(green)[_Now you can turn the *`test_mode`* into false from the configuration._]
 }
 
 #let fonts-check(fonts) = {

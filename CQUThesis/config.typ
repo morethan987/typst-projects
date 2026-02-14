@@ -1,8 +1,9 @@
 /// 全局配置文件
 #let config = (
-  // 学位层级，可选值: bachelor, master, doctor, postdoc
+  test_mode: false, // 测试模式，开启后会显示一些测试页面
+  // 学位层级，可选值: undergraduated, bachelor, master
   // 模板内容会根据学位自动调整，对于不需要的内容会自动忽略
-  degree: "bachelor",
+  degree: "undergraduated",
   degree-type: "academic",
   anonymous: false, // 盲审模式
   twoside: false, // 双面模式，会加入空白页，便于打印
@@ -17,6 +18,25 @@
     // （并不建议）将日期具体到时分秒（UTC 时间），同时会应用系统时区，因而需要根据实际情况自行换算
     // 如下设置北京时间 2026 年 5 月 30 日 10:30 AM，对应 UTC 时间的 2:30 AM：
     // date: datetime(year: 2026, month: 5, day: 30, hour: 2, minute: 30, second: 0),
+  ),
+  cover: (
+    en: (
+      title: "english title",
+      name: "english name",
+      major: "english major",
+      supervisor: "supervisor name",
+      degree_awarded_date: datetime(year: 2027, month: 6, day: 15)
+    ),
+    zh: (
+      title: "中文标题中文标题中文标题中文标题中文标题",
+      name: "中文名",
+      supervisor: "导师名字",
+      discipline_category: "学科门类", // 工学
+      major: "学科名称",
+      research_area: "研究方向",
+      defense_committee_chair: "答辩委员会主席",
+      degree_awarded_date: datetime(year: 2027, month: 6, day: 15) // 授位时间
+    )
   ),
   reference_config: (
     // 参考文献标题，默认为 "参考文献"
@@ -35,9 +55,10 @@
 /// 对于 MacOS 用户，可以使用 `Songti SC`、`Heiti SC`、`Kaiti SC`、`Fangsong SC` 和 `Menlo` 作为替代
 ///
 /// 对于 Linux 用户，可以使用 `Source Han Serif`、`Source Han Sans`、`Source Han Mono` 或文泉驿字体等进行配置
+
 #let font-family = (
   SongTi: (
-    (name: "Noto Serif", covers: "latin-in-cjk"),
+    (name: "TeX Gyre Termes", covers: "latin-in-cjk"),
     "Source Han Serif",
   ),
   HeiTi: (
@@ -45,18 +66,19 @@
     "Source Han Sans",
   ),
   KaiTi: (
-    (name: "Noto Serif", covers: "latin-in-cjk"),
-    "AR PL UKai",
+    (name: "TeX Gyre Termes", covers: "latin-in-cjk"),
+    "KaiTi",
   ),
   FangSong: (
-    (name: "Noto Serif", covers: "latin-in-cjk"),
-    "FZFangSong-Z02S",
+    (name: "TeX Gyre Termes", covers: "latin-in-cjk"),
+    "FangSong",
   ),
   Mono: (
-    (name: "Noto Sans Mono", covers: "latin-in-cjk"),
-    "Maple Mono NF",
+    (name: "DejaVu Sans Mono", covers: "latin-in-cjk"),
+    "Source Han Sans",
   ),
   Math: (
-    "Noto Sans Math",
+    "New Computer Modern Math",
+    "KaiTi"
   ),
 )

@@ -40,3 +40,5 @@
 - [CQUThesis-LaTeX](https://github.com/nanmu42/CQUThesis.git)：经典开山之作
 - [某博士学长的博士论文](https://github.com/neardws/My-Doctoral-Dissertation.git)：适配了2023年学位论文要求
 - [2023年学位论文标准](https://github.com/cqu-bdsc/CQUThesis/tree/master/standers/%E9%99%84%E4%BB%B6%EF%BC%9A%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E5%8D%9A%E5%A3%AB%E3%80%81%E7%A1%95%E5%A3%AB%E5%AD%A6%E4%BD%8D%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F%E6%A0%87%E5%87%86%EF%BC%882023%E5%B9%B4%E4%BF%AE%E8%AE%A2%EF%BC%89)
+- [TnTT: Typst & Tsinghua University Template](https://github.com/chillcicada/tntt.git)：清华非官方毕业论文Typst模板作为代码参考
+- [重庆大学校徽校名矢量图](https://github.com/haowang02/CQU-Logo)：清晰度非常高的校徽校名图片仓库
