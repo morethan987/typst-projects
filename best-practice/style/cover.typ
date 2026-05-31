@@ -22,19 +22,3 @@
     #h(13%)自评等级：#config.self_evalue
   ]))
 }
-
-#let inser-background(cover_content) = {
-  // 背景
-  page(
-    background: [
-      #image(
-        "/asset/school-badge.png",
-        fit: "cover"
-      )
-    ],
-    cover_content
-  )
-
-  // 分页
-  pagebreak()
-}
