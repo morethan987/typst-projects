@@ -1,13 +1,18 @@
 #import "config.typ": font-family
 #import "style/heading.typ": set-heading, custom-numbering
 #import "utils/font.typ": use-size
-#import "style/cover.typ": fill-cover-content
+#import "style/cover.typ": make-cover-zh, make-cover-en
 #import "style/abstract.typ": make-abstract
 #import "style/ref.typ": apply-ref-style
 #import "style/appendix.typ": apply-appendix-style
+#import "tests/fonts-test.typ": fonts-test
 
 // 定义模板主函数，这里包括了整个文档的结构和样式设置
 #let cqu_thesis(config: (:), body) = {
+  if config.test_mode {
+    return fonts-test(fonts: font-family)
+  }
+
   // --- 文档元数据设置 ---
   set document(
     title: config.meta_data.at("title", default: "default title"),
@@ -17,7 +22,7 @@
   )
 
   // --- 封面 ---
-  // fill-cover-content(config)
+  make-cover-zh(config)
 
   // --- 目录 ---
   pagebreak()

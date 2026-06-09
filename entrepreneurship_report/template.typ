@@ -50,6 +50,8 @@
   set list(indent: 2em)
   set figure(numbering: "一", supplement: [图片])
   set figure.caption(separator: [：])
+  show figure.where(kind: table): set figure.caption(position: top)
+  show figure.where(kind: table): set figure(supplement: [表], numbering: "一")
 
   // --- 正文 ---
   body

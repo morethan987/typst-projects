@@ -1,23 +1,25 @@
-#import "../../style/card.typ": team-member
+= 管理团队
 
-= 核心团队
+项目初期团队不需要过大，应围绕"产品定义、AI 算法、硬件工程、运营增长、伦理合规"五类能力组建。由于 LinkPal 同时涉及情绪陪伴和个人数据，团队必须设置隐私与安全负责人。
 
-#grid(
-  columns: 2,
-  gutter: 1em,
-  team-member(
-    "张三",
-    "CEO / 项目负责人",
-    "XX大学XX专业，X年XX行业经验。曾主导XX项目，具备XX资源与XX能力。",
-  ),
-  team-member(
-    "李四",
-    "CTO / 技术负责人",
-    "XX大学XX专业，擅长XX技术栈。曾参与XX系统开发，拥有X项技术专利。",
-  ),
-  team-member(
-    "王五",
-    "COO / 运营负责人",
-    "XX大学XX专业，X年运营管理经验。曾任XX公司XX岗位，擅长XX。",
-  ),
+#import "../../style/table.typ": orange-grid-table
+
+#orange-grid-table(
+  columns: (auto, auto),
+  table-align: (center + horizon, left + horizon),
+  [*岗位*],
+  [*职责*],
+  table.hline(stroke: 0.5pt),
+  [CEO / 项目负责人],
+  [负责战略、商业计划、融资、合作谈判和资源整合。],
+  [产品经理],
+  [负责用户调研、需求定义、App 与机器人交互流程设计。],
+  [AI 算法负责人],
+  [负责轻量模型接入、提示词策略、RAG 记忆检索和 FriendSkill 管理。],
+  [硬件负责人],
+  [负责结构设计、传感器选型、样机打样、供应链和质量控制。],
+  [市场运营负责人],
+  [负责校园推广、社群运营、内容种草、渠道合作和用户增长。],
+  [隐私与伦理顾问],
+  [负责授权机制、数据安全、心理风险边界和合规审查。],
 )

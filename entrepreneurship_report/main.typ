@@ -2,12 +2,12 @@
 
 // 1. 配置信息
 #let config = (
-  project-name: "项目名称（待定）",
-  slogan: "用一句话描述项目愿景",
-  industry: "XX行业",
+  project-name: "LinkPal 灵伴",
+  slogan: "基于轻量化大模型与 FriendSkill 熟人技能蒸馏的桌面社交陪伴机器人",
+  industry: "桌面社交陪伴机器人",
   round: "天使轮",
-  amount: "XXX万元",
-  session: "2024至2025学年第二学期",
+  amount: "待定",
+  session: "2025至2026学年第二学期",
   course: "创业管理",
   members: (
     (name: "张三", role: "CEO / 项目负责人", id: "20230xxx"),
@@ -21,15 +21,13 @@
 
 // 3. 正文
 #include "contents/chapters/overview.typ"
-#include "contents/chapters/team.typ"
-#include "contents/chapters/market.typ"
-#include "contents/chapters/pain-points.typ"
-#include "contents/chapters/solution.typ"
+#include "contents/chapters/vision.typ"
 #include "contents/chapters/product.typ"
-#include "contents/chapters/business-model.typ"
-#include "contents/chapters/revenue.typ"
+#include "contents/chapters/market.typ"
 #include "contents/chapters/competition.typ"
-#include "contents/chapters/progress.typ"
-#include "contents/chapters/roadmap.typ"
-#include "contents/chapters/financing.typ"
+#include "contents/chapters/development.typ"
+#include "contents/chapters/team.typ"
+#include "contents/chapters/finance.typ"
 #include "contents/chapters/risk.typ"
+#include "contents/chapters/exit.typ"
+#include "contents/chapters/roadmap.typ"
